@@ -1,19 +1,5 @@
 # relay-protection-simulink
 
-## Recommended repository name
-
-`relay-protection-simulink`
-
-Alternative names:
-
-* `ansi-50-51-relay-model`
-* `overcurrent-relay-simulink`
-* `power-system-relay-protection`
-
----
-
-## Folder structure
-
 ```text
 relay-protection-simulink/
 │
@@ -48,6 +34,119 @@ relay-protection-simulink/
 
 ## README.md
 
+````markdown
+# Control & Protection Systems – ANSI 50/51 Relay Modeling Using MATLAB/Simulink
+
+## Overview
+This project presents a MATLAB/Simulink model of a power system protection scheme using ANSI 50/51 overcurrent relay logic. The model demonstrates how a relay detects abnormal current conditions and issues a trip signal to protect the system during faults.
+
+This work was developed as part of an undergraduate research project focused on control and protection systems.
+
+---
+
+## Engineering Problem
+Faults in power systems can produce high currents that may damage equipment if not cleared quickly. Protection relays must detect these conditions and respond with the correct timing.
+
+---
+
+## System Description
+The simulated system includes:
+- Three-phase source
+- Transmission line impedance
+- Load
+- Circuit breaker
+- Three-phase fault block
+- Three-phase V-I measurement
+- RMS measurement block
+- Current transformer (CT) scaling
+- Relay logic (ANSI 50/51)
+
+---
+
+## Relay Logic
+
+### ANSI 50 – Instantaneous Overcurrent
+Trips immediately when current exceeds a high pickup threshold.
+
+### ANSI 51 – Inverse-Time Overcurrent
+Trips with a delay depending on fault severity. Higher current → faster trip.
+
+---
+
+## Key Parameters
+- **I50_pickup** – Instantaneous pickup current
+- **I51_pickup** – Inverse-time pickup current
+- **M** – Multiple of pickup (I / I_pickup)
+- **t_operate** – Relay operating time
+- **TimeReached** – Timer completion signal
+
+---
+
+## Results
+
+### 1. Inverse-Time Characteristic Curve
+![Inverse Time Curve](images/inverse-time-characteristic-curve.png)
+
+As the multiple of pickup (M) increases, operating time decreases. This matches expected IEEE inverse-time behavior.
+
+---
+
+### 2. Timer Accumulation (ANSI 51)
+![Timer Accumulation](images/timer-accumulation-plot.png)
+
+The relay accumulates time only when current exceeds pickup. This explains delayed tripping for moderate faults.
+
+---
+
+### 3. Relay Trip Logic Response
+![Trip Logic](images/trip-logic-plot.png)
+
+Once the operating condition is satisfied, the relay sends a trip signal to the breaker and clears the fault.
+
+---
+
+## Model File
+- `model/ANSI_50_51_Relay_Model_Cleanup_Presentation_Polish.slx`
+
+---
+
+## Technical Highlights
+- RMS current used for stable relay decision-making
+- CT scaling applied to match relay thresholds
+- Implementation of both instantaneous and inverse-time logic
+- Simulation of fault conditions and relay response
+
+---
+
+## Tools Used
+- MATLAB
+- Simulink
+- Simscape Electrical
+
+---
+
+## Skills Demonstrated
+- Power system modeling
+- Fault analysis
+- Protective relaying (ANSI 50/51)
+- Simulation and system analysis
+
+---
+
+## Future Work
+- Relay coordination studies
+- Distance protection modeling
+- Real-time simulation (OPAL-RT / HIL)
+
+---
+
+## About Me
+Electrical Engineering student focused on Power Systems, Protection & Control, and intelligent infrastructure.
+
+---
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/ducarmelzephyr
 ```markdown
 # Control & Protection Systems – ANSI 50/51 Relay Modeling Using MATLAB/Simulink
 
@@ -168,7 +267,7 @@ I am an Electrical Engineering student focused on power systems, protection and 
 ## Contact
 - LinkedIn: [Add your LinkedIn URL here]
 - Resume / portfolio: [Add link if available]
-```
+````
 
 ---
 
@@ -232,3 +331,8 @@ Thumbs.db
 
 ---
 
+## LICENSE
+
+Recommended: `MIT License`
+
+If you want, you can use GitHub's built-in license selector when creating the repo.
