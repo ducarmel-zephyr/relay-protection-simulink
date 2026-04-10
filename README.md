@@ -85,7 +85,7 @@ Trips with a delay depending on fault severity. Higher current → faster trip.
 ## Results
 
 ### 1. Inverse-Time Characteristic Curve
-![Inverse Time Curve](https://raw.githubusercontent.com/yourname/relay-protection-simulink/main/images/inverse-time-characteristic-curve.png)
+![Inverse Time Curve](https://raw.githubusercontent.com/ducarmel-zephyr/relay-protection-simulink/main/images/inverse-time-characteristic-curve.png)
 
 As the multiple of pickup (M) increases, operating time decreases. This matches expected IEEE inverse-time behavior.
 
